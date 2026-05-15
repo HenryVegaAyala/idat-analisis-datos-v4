@@ -40,3 +40,15 @@ print(f"Producto eliminado usando pop: {producto_eliminado}")
 # 11. Verificar si existe un producto en la lista
 existe_donut = "Donut" in vitrina
 print(f"Existe donut: {existe_donut}")
+
+# 12. Limpiar y verificar si existe un producto en la lista
+vitrina_limpia = [item.lower().replace(" ", "_") for item in vitrina] # Proceso iterativo de formateo y limpieza
+producto_buscar = " Donut "
+producto_buscar = producto_buscar.strip().lower().replace(" ", "_") # Proceso de formateo y limpieza
+
+print(f"Lista de productos antigua: {vitrina}")
+print(f"Lista de productos limpia: {vitrina_limpia}")
+print(f"Producto a buscar: {producto_buscar}")
+
+existe_donut = producto_buscar in vitrina_limpia
+print(f"Existe donut: {existe_donut}")
