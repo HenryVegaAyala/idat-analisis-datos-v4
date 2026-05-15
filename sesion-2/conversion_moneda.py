@@ -1,15 +1,28 @@
-def convertir_moneda(monto, tipo_de_cambio = 3.80, conversion_soles = True):
+def convertir_moneda(monto, tipo_cambio=3.80, de_dolares_a_soles=True):
+    """
+    Convierte montos entre dólares y soles.
 
-    if conversion_soles:
-        resultado = monto / tipo_de_cambio # Si conversion_soles es verdadero el monto a ingresar es dolares y lo convertire a soles
+    Parámetros:
+    - monto: cantidad a convertir
+    - tipo_cambio: valor del dólar respecto al sol
+    - de_dolares_a_soles:
+        True  -> convierte de dólares a soles
+        False -> convierte de soles a dólares
+    """
+
+    if de_dolares_a_soles:
+        resultado = monto * tipo_cambio
     else:
-        resultado = monto * tipo_de_cambio # Si conversion_soles es falso el monto a ingresar es soles y lo convertire a dolares
+        resultado = monto / tipo_cambio
+
+    return round(resultado, 2)
 
 
-    return resultado
+# Convertir de soles a dólares
+monto_total_dolares = convertir_moneda(100, 3.85, False)
+print(f"Monto en dólares: ${monto_total_dolares}")
 
-monto_total_soles = convertir_moneda(100, 3.85, False)
-print(f"Monto en soles: {monto_total_soles}")
 
-monto_total_dolares = convertir_moneda(200, 3.60, True)
-print(f"Monto en dolares: {monto_total_dolares}")
+# Convertir de dólares a soles
+monto_total_soles = convertir_moneda(200, 3.60, True)
+print(f"Monto en soles: S/ {monto_total_soles}")
