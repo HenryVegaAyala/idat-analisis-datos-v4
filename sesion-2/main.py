@@ -52,3 +52,24 @@ print(f"Producto a buscar: {producto_buscar}")
 
 existe_donut = producto_buscar in vitrina_limpia
 print(f"Existe donut: {existe_donut}")
+
+# 13. Limpiar y verificar si existe un producto en la lista
+vitrina_limpia = []
+
+for item in vitrina:
+    # Convertir a minuscula
+    item_minuscula = item.lower()
+
+    # Limpiar espacios delante o atras
+    item_limpio = item_minuscula.strip()
+
+    # Reemplazar espacios por guion bajo
+    item_consolidado = item_minuscula.replace(" ", "_")
+
+    # Guardar en la nueva lista
+    vitrina_limpia.append(item_consolidado)
+
+producto_a_buscar = "DONUT"
+
+existe_producto = producto_a_buscar.strip().lower().replace(" ", "_") in vitrina_limpia
+print(f"Existe el producto: {existe_producto}")
